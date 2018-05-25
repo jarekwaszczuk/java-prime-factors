@@ -10,15 +10,11 @@ public class PrimeFactors {
     public static List<Integer> generate(int number) {
         List<Integer> lista = new LinkedList();
 
-        System.out.println("Liczba: " + number);
-
         lista.add(1);
         if (checkPrime(number) & number != 1) {
             lista.add(number);
-            System.out.println(checkPrime(number));
         } else {
-            //warunek sprawdzania liczb pierwszych 1 < p < number / 2
-            //TODO
+            //warunek sprawdzania liczb 1 < p < number / 2
             int p = number / 2;
             for (int i = 2; i <= p; i++) {
                 if (number % i == 0 & !lista.contains(i) & checkPrime(i)) {
@@ -26,8 +22,7 @@ public class PrimeFactors {
                 }
             }
         }
-        System.out.println("Lista SIZE: " + lista.size());
-        System.out.println(Arrays.toString(lista.toArray()));
+        //System.out.println(Arrays.toString(lista.toArray()));
         return lista;
     }
 
